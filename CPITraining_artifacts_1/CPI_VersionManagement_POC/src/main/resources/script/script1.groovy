@@ -20,16 +20,16 @@ import java.util.HashMap;
 def Message processData(Message message) {
     //Body 
        def body = message.getBody();
-       message.setBody(body + "Body is modified");
+       message.setBody(body + "Body is modified for Version management checks");
        //Headers 
        def map = message.getHeaders();
        def value = map.get("oldHeader");
-       message.setHeader("oldHeader", value + "modified");
+       message.setHeader("oldHeader", value + "modified for Version management checks");
        message.setHeader("newHeader", "newHeader");
        //Properties 
        map = message.getProperties();
        value = map.get("oldProperty");
-       message.setProperty("oldProperty", value + "modified");
+       message.setProperty("oldProperty", value + "modified for Version management checks");
        message.setProperty("newProperty", "newProperty");
        return message;
 }
